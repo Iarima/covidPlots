@@ -1,0 +1,52 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# covidPlots <img src='man/figures/logo.png' align="right" height="134" />
+
+# covidPlots
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This package gives an overview of the covid-19 situation in the world.
+
+## Installation
+
+Unfortunately you can't install this package from CRAN. So you will have to rely on github!
+
+
+``` r
+# install.packages("devtools")
+devtools::install_github("Iarima/covidPlots")
+```
+## Example
+
+This package has three functions. First one returns global covid-19 data as a dataframe.
+```{r example, message=FALSE}
+library(covidPlots)
+covidData <- covidPlots::updateCovid()
+head(covidData)
+```
+
+The second one plots a world map colored by the number of total cases, total deaths or total recovers.
+
+```{r message=FALSE, warning=FALSE}
+covidPlots::worldCovidPlot(day = "2020-10-1",type = "cases")
+```
+
+Lastly, the third function uses the data from updateCovid to draw time series of new cases, new deaths, and new recovers for a country.
+
+```{r}
+covidPlots::covidTimeSeries(country = 'egypt',min.date = '2020-01-22',max.date = '2020-10-2')
+```

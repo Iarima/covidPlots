@@ -1,0 +1,41 @@
+---
+title: "Covid-19 in plots"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Covid-19 in plots}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE, fig.width=10,fig.height=10}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(covidPlots)
+```
+
+
+## Examples
+
+This package has three functions. First one returns global covid-19 data as a dataframe.
+```{r example, message=FALSE}
+library(covidPlots)
+covidData <- covidPlots::updateCovid()
+head(covidData)
+```
+
+The second one plots a world map colored by the number of total cases, total deaths or total recovers.
+
+```{r message=FALSE, warning=FALSE}
+covidPlots::worldCovidPlot(day = "2020-10-1",type = "cases")
+```
+
+Lastly, the third function uses the data from updateCovid to draw time series of new cases, new deaths, and new recovers for a country.
+
+```{r}
+covidPlots::covidTimeSeries(country = 'egypt',min.date = '2020-01-22',max.date = '2020-10-2')
+```

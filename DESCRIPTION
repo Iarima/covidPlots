@@ -1,0 +1,37 @@
+Type: Package
+Package: covidPlots
+Title: This package gives an overview of the covid-19 situation in the world.
+Version: 0.0.1
+Authors@R: 
+    person(given = "Ali",
+           family = "Malek",
+           role = c("aut", "cre"),
+           email = "ali.malek@ut.ac.ir",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package uses the data operated by the Johns Hopkins University Center for Systems Science 
+    and Engineering (JHU CSSE) to show a table of the total cases, deaths, and recovers and also 
+    uses that data to plot a world map which is colored by the type of data chosen by the user 
+    and time series for the country chosen by the user.
+URL: https://github.com/Iarima/covidPlots
+BugReports: https://github.com/Iarima/covidPlots/issues
+License: MIT + file LICENSE
+Depends:
+    R (>= 3.5.0)
+Imports:
+   dplyr,
+   ggplot2,
+   readr,
+   sf,
+   rnaturalearthdata ,
+   rnaturalearth,
+   lubridate
+Encoding: UTF-8
+LazyData: true
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
